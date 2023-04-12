@@ -1,11 +1,8 @@
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import React, { useLayoutEffect } from "react";
-import { useNavigation } from "@react-navigation/native";
 import { useFonts, Inter_900Black } from "@expo-google-fonts/inter";
 
-const ContinueScreen = () => {
-  const navigation = useNavigation();
-
+const ContinueScreen = ({ navigation }) => {
   useLayoutEffect(() => {
     navigation.setOptions({ headerShown: false });
   }, []);
@@ -45,7 +42,10 @@ const ContinueScreen = () => {
         </Text>
       </View>
       <View className="flex flex-row px-[35] pt-16 w-auto">
-        <TouchableOpacity className="flex-grow flex bg-[#1e90ff] text-white font-bold py-5 px-4 rounded-full">
+        <TouchableOpacity
+          className="flex-grow flex bg-[#1e90ff] text-white font-bold py-5 px-4 rounded-full"
+          onPress={() => navigation.navigate("EmailSignIn")}
+        >
           <Text
             className="text-white mx-auto"
             style={{ fontFamily: "Inter_900Black" }}

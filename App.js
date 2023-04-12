@@ -3,6 +3,8 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "./screens/HomeScreen";
 import { SafeAreaView, View } from "react-native";
 import ContinueScreen from "./screens/ContinueScreen";
+import SignInWithEmail from "./screens/SignInWithEmail";
+import SignUpWithEmail from "./screens/SignUpWithEmail";
 
 const Stack = createNativeStackNavigator();
 
@@ -14,6 +16,8 @@ export default function App() {
           <Stack.Navigator initialRouteName="Continue">
             <Stack.Screen name="Home" component={HomeScreen} />
             <Stack.Screen name="Continue" component={ContinueScreen} />
+            <Stack.Screen name="EmailSignIn" component={SignInWithEmail} />
+            <Stack.Screen name="EmailSignUp" component={SignUpWithEmail} />
           </Stack.Navigator>
         </NavigationContainer>
       </SafeAreaView>
