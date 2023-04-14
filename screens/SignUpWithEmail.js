@@ -2,6 +2,7 @@ import { View, Text, TouchableOpacity, Image, TextInput } from "react-native";
 import React, { useLayoutEffect, useState } from "react";
 import { useFonts, Inter_900Black } from "@expo-google-fonts/inter";
 import { Link } from "@react-navigation/native";
+import { checkValidEmail } from "../utils/utils";
 
 const SignUpWithEmail = ({ navigation }) => {
   useLayoutEffect(() => {
@@ -107,9 +108,7 @@ const SignUpWithEmail = ({ navigation }) => {
             className="text-white"
             onChangeText={(_email) => {
               setEmail(_email);
-              if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
-                setEmailValid(true);
-              else setEmailValid(false);
+              setEmailValid(checkValidEmail(_email));
             }}
           />
         </View>
@@ -138,7 +137,6 @@ const SignUpWithEmail = ({ navigation }) => {
             className="text-white"
             onChangeText={(_confPassword) => {
               setConfPassword(_confPassword);
-              console.log(_confPassword);
               setPasswordsMatch(password == _confPassword);
             }}
           />
