@@ -1,10 +1,10 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import HomeScreen from "./screens/HomeScreen";
 import { SafeAreaView, View } from "react-native";
-import ContinueScreen from "./screens/ContinueScreen";
-import SignInWithEmail from "./screens/SignInWithEmail";
-import SignUpWithEmail from "./screens/SignUpWithEmail";
+import HomeScreen from "./screens/HomeScreen";
+import ContinueScreen from "./screens/PreInitialScreens/ContinueScreen";
+import SignInWithEmail from "./screens/PreInitialScreens/SignInWithEmail";
+import SignUpWithEmail from "./screens/PreInitialScreens/SignUpWithEmail";
 
 const Stack = createNativeStackNavigator();
 

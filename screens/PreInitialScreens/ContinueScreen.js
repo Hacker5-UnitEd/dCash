@@ -17,7 +17,7 @@ const ContinueScreen = ({ navigation }) => {
     <View className="flex bg-[#1a1a1a] flex-grow">
       <View className="flex mx-auto mt-5">
         <Image
-          source={require("../assets/continue-pic.png")}
+          source={require("../../assets/continue-pic.png")}
           style={{ width: 250, height: 250 }}
         />
       </View>
