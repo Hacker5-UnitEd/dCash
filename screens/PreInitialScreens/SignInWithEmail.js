@@ -13,8 +13,9 @@ const SignInWithEmail = ({ navigation }) => {
     Inter_900Black,
   });
 
-  const [emait, setEmail] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [emailValid, setEmailValid] = useState(false);
 
   return !fontsLoaded ? (
     <></>
