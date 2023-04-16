@@ -1,7 +1,8 @@
 import { View, Text, TouchableOpacity, Image, TextInput } from "react-native";
-import React, { useLayoutEffect } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import { useFonts, Inter_900Black } from "@expo-google-fonts/inter";
 import { Link } from "@react-navigation/native";
+import { checkValidEmail } from "../../utils/utils";
 
 const SignInWithEmail = ({ navigation }) => {
   useLayoutEffect(() => {
@@ -12,16 +13,29 @@ const SignInWithEmail = ({ navigation }) => {
     Inter_900Black,
   });
 
+  const [emait, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   return !fontsLoaded ? (
     <></>
   ) : (
     <View className="flex bg-[#1a1a1a] flex-grow">
       <View className="flex px-[35] pt-5 mt-32">
-        <View className="bg-[#1a1a1a] border-2 border-[#ffffff] rounded-full py-4 px-5">
+        <View
+          className={
+            "bg-[#1a1a1a] border-2 border-[" +
+            (emailValid || email == "" ? "#ffffff" : "#e11717") +
+            "] rounded-full py-4 px-5"
+          }
+        >
           <TextInput
             placeholder="E-mail"
-            placeholderTextColor={"#888888"}
+            placeholderTextColor="#888888"
             className="text-white"
+            onChangeText={(_email) => {
+              setEmail(_email);
+              setEmailValid(checkValidEmail(_email));
+            }}
           />
         </View>
         <View className="bg-[#1a1a1a] border-2 border-[#ffffff] rounded-full py-4 px-5 mt-10">
@@ -30,6 +44,9 @@ const SignInWithEmail = ({ navigation }) => {
             placeholder="Password"
             placeholderTextColor={"#888888"}
             className="text-white"
+            onChangeText={(_password) => {
+              setPassword(_password);
+            }}
           />
         </View>
       </View>
