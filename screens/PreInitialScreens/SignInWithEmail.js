@@ -52,11 +52,15 @@ const SignInWithEmail = ({ navigation }) => {
         </View>
       </View>
       <View className="flex flex-row px-[35] pt-16 w-auto">
-        <TouchableOpacity className="flex-grow flex bg-[#1e90ff] text-white font-bold py-5 px-4 rounded-full">
+        <TouchableOpacity
+          className="flex-grow flex bg-[#1e90ff] text-white font-bold py-5 px-4 rounded-full"
+          onPress={() => {
+            navigation.navigate("Home");
+          }}
+        >
           <Text
             className="text-white mx-auto text-lg"
             style={{ fontFamily: "Inter_900Black" }}
-            onPress={() => {}}
           >
             Sign In
           </Text>
