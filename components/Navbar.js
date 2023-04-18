@@ -10,7 +10,7 @@ const Navbar = ({ LeftComponent }) => {
       <View className="flex flex-row float-right bg-slate-400">
         {/* search icon */}
         <Text>S</Text>
-        {/* profile pic */}
+        {/* profile picture */}
         <Text>P</Text>
       </View>
     </View>
