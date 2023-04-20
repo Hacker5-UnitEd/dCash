@@ -1,5 +1,5 @@
 import { View, Text, ScrollView } from "react-native";
-import React, { useLayoutEffect } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { useFonts, Inter_900Black } from "@expo-google-fonts/inter";
 import Navbar from "../components/Navbar";
@@ -16,6 +16,8 @@ const HomeScreen = () => {
   let [fontsLoaded] = useFonts({
     Inter_900Black,
   });
+
+  const [selectedTab, setSelectedTab] = useState("DebtTracker");
 
   return !fontsLoaded ? (
     <></>
@@ -44,7 +46,13 @@ const HomeScreen = () => {
           Phynxx
         </Text>
         {/* tab strip */}
-        <DebtTrackerTab />
+        {selectedTab == "DebtTracker" ? (
+          <DebtTrackerTab setSelectedTab={setSelectedTab} />
+        ) : selectedTab == "Finance" ? (
+          <FinanceTab setSelectedTab={setSelectedTab} />
+        ) : (
+          <></>
+        )}
       </View>
 
       {/* ledger */}

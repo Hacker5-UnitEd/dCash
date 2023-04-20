@@ -3,7 +3,7 @@ import React from "react";
 import BalanceCard from "../../components/BalanceCard";
 import { useFonts, Inter_900Black } from "@expo-google-fonts/inter";
 
-const FinanceTab = () => {
+const FinanceTab = ({ setSelectedTab }) => {
   let [fontsLoaded] = useFonts({
     Inter_900Black,
   });
@@ -11,7 +11,12 @@ const FinanceTab = () => {
   return (
     <View className="mt-6">
       <View className="flex flex-row mb-8">
-        <TouchableOpacity className="flex bg-[#1a1a1a] py-2 px-6 rounded-full mr-3">
+        <TouchableOpacity
+          className="flex bg-[#1a1a1a] py-2 px-6 rounded-full mr-3"
+          onPress={() => {
+            setSelectedTab("DebtTracker");
+          }}
+        >
           <Text
             className="text-gray-500 mx-auto"
             style={{ fontFamily: "Inter_900Black" }}

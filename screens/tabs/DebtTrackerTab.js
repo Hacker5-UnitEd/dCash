@@ -1,7 +1,7 @@
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import React, { useEffect, useState } from "react";
-import BalanceCard from "../../components/BalanceCard";
 import { useFonts, Inter_900Black } from "@expo-google-fonts/inter";
+import DebtTrackerCard from "../../components/DebtTrackerCard";
 
 const DebtButton = ({ debtObj, type }) => {
   return (
@@ -23,20 +23,20 @@ const DebtButton = ({ debtObj, type }) => {
   );
 };
 
-const DebtTrackerTab = () => {
+const DebtTrackerTab = ({ setSelectedTab }) => {
   let [fontsLoaded] = useFonts({
     Inter_900Black,
   });
 
   const [debts, setDebts] = useState([
-    // {
-    //   id: 1,
-    //   person: {
-    //     name: "Person 1",
-    //     image: null,
-    //   },
-    //   debts: [80, 80, 80, 80, 80],
-    // },
+    {
+      id: 1,
+      person: {
+        name: "Person 1",
+        image: null,
+      },
+      debts: [80, 80, 80, 80, 80],
+    },
     {
       id: 2,
       person: {
@@ -77,7 +77,12 @@ const DebtTrackerTab = () => {
             Debt Tracker
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity className="flex bg-[#1a1a1a] py-2 px-6 rounded-full mr-3">
+        <TouchableOpacity
+          className="flex bg-[#1a1a1a] py-2 px-6 rounded-full mr-3"
+          onPress={() => {
+            setSelectedTab("Finance");
+          }}
+        >
           <Text
             className="text-gray-500 mx-auto"
             style={{ fontFamily: "Inter_900Black" }}
@@ -86,7 +91,7 @@ const DebtTrackerTab = () => {
           </Text>
         </TouchableOpacity>
       </View>
-      <BalanceCard balance={3000} />
+      <DebtTrackerCard dep={76} />
       <Text
         className="text-white text-3xl mt-8"
         style={{ fontFamily: "Inter_900Black" }}
