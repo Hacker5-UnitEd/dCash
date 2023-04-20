@@ -100,16 +100,12 @@ const DebtTrackerTab = ({ setSelectedTab }) => {
       </Text>
 
       <View className="flex flex-row mt-2 mb-10">
-        <View className="flex-1">
-          {debts.map((debt, idx) =>
-            idx % 2 == 0 ? <DebtButton debtObj={debt} /> : <></>
-          )}
-        </View>
-        <View className="flex-1">
-          {debts.map((debt, idx) =>
-            idx % 2 != 0 ? <DebtButton debtObj={debt} /> : <></>
-          )}
-        </View>
+        <Text
+          className="text-white text-xl mt-8"
+          style={{ fontFamily: "Inter_900Black" }}
+        >
+          todo
+        </Text>
       </View>
     </View>
   );
