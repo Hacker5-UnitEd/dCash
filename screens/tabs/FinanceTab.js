@@ -27,7 +27,7 @@ const FinanceTab = () => {
             className="text-white mx-auto"
             style={{ fontFamily: "Inter_900Black" }}
           >
-            Fincance
+            Finance
           </Text>
         </TouchableOpacity>
       </View>

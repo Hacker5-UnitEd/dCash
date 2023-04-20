@@ -4,6 +4,7 @@ import { useNavigation } from "@react-navigation/native";
 import { useFonts, Inter_900Black } from "@expo-google-fonts/inter";
 import Navbar from "../components/Navbar";
 import FinanceTab from "./tabs/FinanceTab";
+import DebtTrackerTab from "./tabs/DebtTrackerTab";
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -43,7 +44,7 @@ const HomeScreen = () => {
           Phynxx
         </Text>
         {/* tab strip */}
-        <FinanceTab />
+        <DebtTrackerTab />
       </View>
 
       {/* ledger */}
