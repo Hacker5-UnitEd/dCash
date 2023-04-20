@@ -22,7 +22,7 @@ const HomeScreen = () => {
   return !fontsLoaded ? (
     <></>
   ) : (
-    <View>
+    <View className="h-full">
       <ScrollView className="flex bg-[#1a1a1a] flex-grow">
         {/* navbar */}
         <Navbar
