@@ -4,7 +4,7 @@ import React from "react";
 const BalanceCard = ({ balance }) => {
   return (
     <>
-      <View className="bg-[#313131] p-5 rounded-2xl h-60">
+      <View className="bg-[#313131] p-5 rounded-2xl h-52">
         <Text
           className="text-white text-2xl mt-1"
           style={{ fontFamily: "Inter_900Black" }}
