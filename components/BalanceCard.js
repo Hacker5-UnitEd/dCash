@@ -4,7 +4,7 @@ import React from "react";
 const BalanceCard = ({ balance }) => {
   return (
     <View>
-      <View className="bg-[#414141] p-5 rounded-2xl">
+      <View className="bg-[#313131] p-5 rounded-2xl">
         <Text
           className="text-white text-2xl mt-1"
           style={{ fontFamily: "Inter_900Black" }}
@@ -24,8 +24,8 @@ const BalanceCard = ({ balance }) => {
           {balance}
         </Text>
       </View>
-      <View className="bg-[#313131] h-2 mx-3 rounded-bl-2xl rounded-br-2xl"></View>
-      <View className="bg-[#212121] h-2 mx-5 rounded-bl-2xl rounded-br-2xl"></View>
+      <View className="bg-[#252525] h-2 mx-3 rounded-bl-2xl rounded-br-2xl"></View>
+      <View className="bg-[#202020] h-2 mx-5 rounded-bl-2xl rounded-br-2xl"></View>
     </View>
   );
 };
