@@ -1,4 +1,4 @@
-import { View, Text } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import React from "react";
 
 const DebtTrackerCard = ({ dep }) => {
@@ -24,7 +24,10 @@ const DebtTrackerCard = ({ dep }) => {
           {dep}%
         </Text>
         <View className="bg-[#414141] w-auto h-2 rounded-full">
-          <View className="bg-[#1e90ff] h-2 rounded-full"></View>
+          <View
+            className="bg-[#1e90ff] h-2 rounded-full"
+            style={StyleSheet.create({ width: dep + "%" })}
+          ></View>
         </View>
       </View>
       <View className="bg-[#252525] h-2 mx-3 rounded-bl-2xl rounded-br-2xl"></View>
